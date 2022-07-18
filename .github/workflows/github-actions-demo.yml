@@ -18,13 +18,14 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.x"
-      - run: python --version
       - run: python oops_1.py
       - run: echo "This job's status is ${{ job.status }}."
-  Python-Version:
+  Python-Version-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Up Python
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup Python
         uses: action/setup-python@v3
         with:
           python-version: "3.8"
