@@ -19,4 +19,13 @@ jobs:
       - run: python oops_1.py
       - run: echo "This job's status is ${{ job.status }}."
 
+  Install-Specific-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.8"
+      - run: python --version
+
 
